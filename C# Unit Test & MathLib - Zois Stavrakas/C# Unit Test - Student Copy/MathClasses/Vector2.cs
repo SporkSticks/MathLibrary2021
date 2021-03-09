@@ -25,7 +25,7 @@ namespace MathClasses
         }
 
         // V = V + V --> Vector Addition
-        public static Vector2 operator+ (Vector2 lhs, Vector2 rhs)
+        public static Vector2 operator +(Vector2 lhs, Vector2 rhs)
         {
             Vector2 result = new Vector2();
             result.x = lhs.x + rhs.x;
@@ -35,7 +35,7 @@ namespace MathClasses
         }
 
         // V = V - V --> Vector Subtraction
-        public static Vector2 operator- (Vector2 lhs, Vector2 rhs)
+        public static Vector2 operator -(Vector2 lhs, Vector2 rhs)
         {
             Vector2 result = new Vector2();
             result.x = lhs.x - rhs.x;
@@ -45,7 +45,7 @@ namespace MathClasses
         }
 
         // V = f * V --> Vector Scaling (float lhs)
-        public static Vector2 operator* (float lhs, Vector2 rhs)
+        public static Vector2 operator *(float lhs, Vector2 rhs)
         {
             Vector2 result = new Vector2();
             result.x = lhs * rhs.x;
@@ -55,7 +55,7 @@ namespace MathClasses
         }
 
         // V = V * f --> Vector Scaling (float rhs)
-        public static Vector2 operator* (Vector2 lhs, float rhs)
+        public static Vector2 operator *(Vector2 lhs, float rhs)
         {
             Vector2 result = new Vector2();
             result.x = lhs.x * rhs;
