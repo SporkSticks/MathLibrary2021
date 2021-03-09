@@ -76,9 +76,18 @@ namespace MathClasses
         }
 
         // f = V.Dot(V) --> Dot Product
+        public float Dot(Vector4 vecA, Vector4 vecB)
+        {
+            float dotProd = 0.0f;
+            return dotProd;
+        }
 
         // V = V.Cross(V) --> Cross Product
-
+        public Vector4 Cross(Vector4 vecA, Vector4 vecB)
+        {
+            Vector4 crossProd = new Vector4();
+            return crossProd;
+        }
 
         // f = V.Magnitude() --> Magnitude
         public float Magnitude()
@@ -112,5 +121,7 @@ namespace MathClasses
         // setRotateY(f)
 
         // setRotateZ(f)
+
+        // setRotateW(f)
     }
 }

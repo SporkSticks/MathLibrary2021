@@ -65,9 +65,18 @@ namespace MathClasses
         }
 
         // f = V.Dot(V) --> Dot Product
+        public float Dot(Vector2 vecA, Vector2 vecB)
+        {
+            float dotProd = 0.0f;
+            return dotProd;
+        }
 
         // V = V.Cross(V) --> Cross Product
-
+        public Vector2 Cross(Vector2 vecA, Vector2 vecB)
+        {
+            Vector2 crossProd = new Vector2();
+            return crossProd;
+        }
 
         // f = V.Magnitude() --> Magnitude
         public float Magnitude()
