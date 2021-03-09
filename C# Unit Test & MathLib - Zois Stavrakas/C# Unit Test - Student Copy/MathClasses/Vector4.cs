@@ -76,14 +76,14 @@ namespace MathClasses
         }
 
         // f = V.Dot(V) --> Dot Product
-        public float Dot(Vector4 vecA, Vector4 vecB)
+        public float Dot(Vector4 vector4)
         {
             float dotProd = 0.0f;
             return dotProd;
         }
 
         // V = V.Cross(V) --> Cross Product
-        public Vector4 Cross(Vector4 vecA, Vector4 vecB)
+        public Vector4 Cross(Vector4 vector4)
         {
             Vector4 crossProd = new Vector4();
             return crossProd;
