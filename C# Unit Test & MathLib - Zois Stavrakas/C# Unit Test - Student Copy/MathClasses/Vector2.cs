@@ -65,17 +65,42 @@ namespace MathClasses
         }
 
         // f = V.Dot(V) --> Dot Product
-        public float Dot(Vector2 vecA, Vector2 vecB)
+        public float Dot(Vector2 vector2)
         {
-            float dotProd = 0.0f;
+            float dotProd = (x * vector2.x) + (y * vector2.y);
             return dotProd;
         }
 
-        // V = V.Cross(V) --> Cross Product
-        public Vector2 Cross(Vector2 vecA, Vector2 vecB)
+        // V = V.PerpendicularPosX(V) --> Get Perpendicular Angle to Vector (Positive X)
+        public Vector2 PerpendicularPosX(Vector2 vector2)
         {
-            Vector2 crossProd = new Vector2();
-            return crossProd;
+            Vector2 perpVector = new Vector2(-y, x);
+            return perpVector;
+        }
+
+        // V = V.PerpendicularNegX(V) --> Get Perpendicular Angle to Vector (Negative X)
+        public Vector2 PerpendicularNegX(Vector2 vector2)
+        {
+            Vector2 perpVector = new Vector2(y, -x);
+            return perpVector;
+        }
+
+        // f = GetAngleBetween(V1, V2) --> get angle between two vectors
+        public float GetAngleBetween(Vector2 lhs, Vector2 rhs, bool returnClockwise)
+        {
+            lhs.Normalize();
+            rhs.Normalize();
+            float fDot = lhs.Dot(rhs);
+
+            float angle = (float)Math.Acos(fDot);
+
+            
+            if (returnClockwise)
+            {
+
+            }
+
+            return angle;
         }
 
         // f = V.Magnitude() --> Magnitude

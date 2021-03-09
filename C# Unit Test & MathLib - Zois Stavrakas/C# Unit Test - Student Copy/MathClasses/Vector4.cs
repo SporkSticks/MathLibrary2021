@@ -78,14 +78,19 @@ namespace MathClasses
         // f = V.Dot(V) --> Dot Product
         public float Dot(Vector4 vector4)
         {
-            float dotProd = 0.0f;
+            float dotProd = (x * vector4.x) + (y * vector4.y) + (z * vector4.z) + (w * vector4.w);
             return dotProd;
         }
 
         // V = V.Cross(V) --> Cross Product
-        public Vector4 Cross(Vector4 vector4)
+        public Vector4 Cross(Vector4 rhs)
         {
             Vector4 crossProd = new Vector4();
+            crossProd.x = (y * rhs.z) - (z * rhs.y);
+            crossProd.y = (z * rhs.x) - (x * rhs.z);
+            crossProd.z = (x * rhs.y) - (y * rhs.x);
+            crossProd.w = 0;
+
             return crossProd;
         }
 
@@ -103,7 +108,7 @@ namespace MathClasses
             return magSq;
         }
 
-        // Nomarlize() --> return a normalised vector
+        // Nomarlize() --> Normalise a given vector
         public void Normalize()
         {
             float magnitude = Magnitude();
