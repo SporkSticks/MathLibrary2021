@@ -71,15 +71,15 @@ namespace MathClasses
             return dotProd;
         }
 
-        // V = V.PerpendicularPosX(V) --> Get Perpendicular Angle to Vector (Positive X)
-        public Vector2 PerpendicularPosX(Vector2 vector2)
+        // V = V.GetPerpendicularRH(V) --> Get RH Perpendicular
+        public Vector2 GetPrependicularRH(Vector2 vector2)
         {
             Vector2 perpVector = new Vector2(-y, x);
             return perpVector;
         }
 
-        // V = V.PerpendicularNegX(V) --> Get Perpendicular Angle to Vector (Negative X)
-        public Vector2 PerpendicularNegX(Vector2 vector2)
+        // V = V.GetPerpendicularLH(V) --> Get LH Perpendicular
+        public Vector2 GetPerpendicularLH(Vector2 vector2)
         {
             Vector2 perpVector = new Vector2(y, -x);
             return perpVector;
@@ -88,13 +88,16 @@ namespace MathClasses
         // f = GetAngleBetween(V1, V2) --> get angle between two vectors
         public float GetAngleBetween(Vector2 lhs, Vector2 rhs, bool returnClockwise)
         {
+            // Normalise both input vectors
             lhs.Normalize();
             rhs.Normalize();
+
+            // Get the doct product of the two normalised vectors
             float fDot = lhs.Dot(rhs);
 
+            // Get the angle between the two vectors
             float angle = (float)Math.Acos(fDot);
 
-            
             if (returnClockwise)
             {
 
