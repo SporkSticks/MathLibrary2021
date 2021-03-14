@@ -120,13 +120,5 @@ namespace MathClasses
                 w /= magnitude;
             }
         }
-
-        // setRotateX(f)
-
-        // setRotateY(f)
-
-        // setRotateZ(f)
-
-        // setRotateW(f)
     }
 }

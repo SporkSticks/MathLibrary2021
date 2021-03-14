@@ -130,9 +130,5 @@ namespace MathClasses
                 y /= magnitude;
             }
         }
-
-        // setRotateX(f)
-
-        // setRotateY(f)
     }
 }
