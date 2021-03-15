@@ -98,19 +98,43 @@ namespace MathClasses
         // setRotateX(f)
         public void SetRotateX(float xRot)
         {
-            
+            m1 = 1;
+            m2 = 0;
+            m3 = 0;
+            m4 = 0;
+            m5 = (float)Math.Cos(xRot);
+            m6 = (float)Math.Sin(xRot);
+            m7 = 1;
+            m8 = -(float)Math.Sin(xRot);
+            m9 = (float)Math.Cos(xRot);
         }
 
         // setRotateY(f)
         public void SetRotateY(float yRot)
         {
-
+            m1 = (float)Math.Cos(yRot);
+            m2 = 0;
+            m3 = -(float)Math.Sin(yRot);
+            m4 = 0;
+            m5 = 1;
+            m6 = 0;
+            m7 = (float)Math.Sin(yRot);
+            m8 = 0;
+            m9 = (float)Math.Cos(yRot);
         }
 
         // setRotateZ(f)
         public void SetRotateZ(float zRot)
         {
-
+            m1 = (float)Math.Cos(zRot);
+            m2 = (float)Math.Sin(zRot);
+            m3 = 0;
+            m4 = -(float)Math.Sin(zRot);
+            m5 = (float)Math.Cos(zRot);
+            m6 = 0;
+            m7 = 0;
+            m8 = 0;
+            m9 = 1;
         }
 
         // SetEuler --> Set rotation simultaneously using three floats
