@@ -32,7 +32,7 @@ namespace MathClasses
         }
 
         // Vector Transformation --> V = M * V
-        public static Vector4 operator *(Matrix4 lhs, Vector4 rhs)
+        public static Vector4 operator* (Matrix4 lhs, Vector4 rhs)
         {
             Vector4 result = new Vector4();
 
@@ -45,7 +45,7 @@ namespace MathClasses
         }
 
         // Matrix Transformation --> M = M * M
-        public static Matrix4 operator *(Matrix4 lhs, Matrix4 rhs)
+        public static Matrix4 operator* (Matrix4 lhs, Matrix4 rhs)
         {
             Matrix4 result = new Matrix4();
 
@@ -122,5 +122,8 @@ namespace MathClasses
         {
 
         }
+
+        // SetEuler(f pitch, f yaw, f roll) - set the pitch yaw and roll rotations in a single function
+
     }
 }
