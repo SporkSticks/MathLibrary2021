@@ -31,6 +31,56 @@ namespace MathClasses
             this.m13= m13; this.m14= m14; this.m15= m15; this.m16= m16;
         }
 
+        // Scalar Multiplication --> M = M * f
+        public static Matrix4 operator *(Matrix4 lhs, float rhs)
+        {
+            Matrix4 result = new Matrix4();
+
+            result.m1  = lhs.m1  * rhs;
+            result.m2  = lhs.m2  * rhs;
+            result.m3  = lhs.m3  * rhs;
+            result.m4  = lhs.m4  * rhs;
+            result.m5  = lhs.m5  * rhs;
+            result.m6  = lhs.m6  * rhs;
+            result.m7  = lhs.m7  * rhs;
+            result.m8  = lhs.m8  * rhs;
+            result.m9  = lhs.m9  * rhs;
+            result.m10 = lhs.m10 * rhs;
+            result.m11 = lhs.m11 * rhs;
+            result.m12 = lhs.m12 * rhs;
+            result.m13 = lhs.m13 * rhs;
+            result.m14 = lhs.m14 * rhs;
+            result.m15 = lhs.m15 * rhs;
+            result.m16 = lhs.m16 * rhs;
+
+            return result;
+        }
+
+        // Scalar Multiplication --> M = f * M
+        public static Matrix4 operator *(float lhs, Matrix4 rhs)
+        {
+            Matrix4 result = new Matrix4();
+
+            result.m1  = lhs * rhs.m1;
+            result.m2  = lhs * rhs.m2;
+            result.m3  = lhs * rhs.m3;
+            result.m4  = lhs * rhs.m4;
+            result.m5  = lhs * rhs.m5;
+            result.m6  = lhs * rhs.m6;
+            result.m7  = lhs * rhs.m7;
+            result.m8  = lhs * rhs.m8;
+            result.m9  = lhs * rhs.m9;
+            result.m10 = lhs * rhs.m10;
+            result.m11 = lhs * rhs.m11;
+            result.m12 = lhs * rhs.m12;
+            result.m13 = lhs * rhs.m13;
+            result.m14 = lhs * rhs.m14;
+            result.m15 = lhs * rhs.m15;
+            result.m16 = lhs * rhs.m16;
+
+            return result;
+        }
+
         // Vector Transformation --> V = M * V
         public static Vector4 operator* (Matrix4 lhs, Vector4 rhs)
         {
@@ -72,7 +122,7 @@ namespace MathClasses
         // setRotateX(f)
         public void SetRotateX(float xRot)
         {
-
+            
         }
 
         // setRotateY(f)
@@ -87,43 +137,84 @@ namespace MathClasses
 
         }
 
-        // setPositionX(f)
-        public void SetPositionX(float xPos)
+        // SetEuler --> Set rotation simultaneously using three floats
+        public void SetEuler(float pitch, float yaw, float roll)
         {
+            Matrix4 x = new Matrix4();
+            Matrix4 y = new Matrix4();
+            Matrix4 z = new Matrix4();
 
+            x.SetRotateX(pitch);
+            y.SetRotateY(yaw);
+            z.SetRotateZ(roll);
+
+            Matrix4 result = z * y * x;
+
+            m1 = result.m1;
+            m2 = result.m2;
+            m3 = result.m3;
+            m5 = result.m5;
+            m6 = result.m6;
+            m7 = result.m7;
+            m9 = result.m9;
+            m10= result.m10;
+            m11= result.m11;
         }
 
-        // setPositionY(f)
-        public void SetPositionY(float yPos)
+        // SetEuler --> Set rotation simultaneously using Vector3
+        public void SetEuler(Vector3 rotation)
         {
+            Matrix4 x = new Matrix4();
+            Matrix4 y = new Matrix4();
+            Matrix4 z = new Matrix4();
 
+            x.SetRotateX(rotation.x);
+            y.SetRotateY(rotation.y);
+            z.SetRotateZ(rotation.z);
+
+            Matrix4 result = z * y * x;
+
+            m1 = result.m1;
+            m2 = result.m2;
+            m3 = result.m3;
+            m5 = result.m5;
+            m6 = result.m6;
+            m7 = result.m7;
+            m9 = result.m9;
+            m10 = result.m10;
+            m11 = result.m11;
         }
 
-        // setPositionZ(f)
-        public void SetPositionZ(float zPos)
+        // Set Translation Using Three Floats
+        public void SetTranslation(float x, float y, float z)
         {
-
+            m4 = x;
+            m8 = y;
+            m12 = z;
         }
 
-        // setScaleX(f)
-        public void SetScaleX(float xScale)
+        // Set Translation Using Vector3
+        public void SetTranslation(Vector3 pos)
         {
-
+            m4 = pos.x;
+            m8 = pos.y;
+            m12 = pos.z;
         }
 
-        // setScaleY(f)
-        public void SetScaleY(float yScale)
+        // Set Scale Using Three Floats
+        public void SetScale(float x, float y, float z)
         {
-
+            m1 = x;
+            m6 = y;
+            m11 = z;
         }
 
-        // setScaleZ(f)
-        public void SetScaleZ(float zScale)
+        // Set Scale Using Vector3
+        public void SetScale(Vector3 scale)
         {
-
+            m1 = scale.x;
+            m6 = scale.y;
+            m11 = scale.z;
         }
-
-        // SetEuler(f pitch, f yaw, f roll) - set the pitch yaw and roll rotations in a single function
-
     }
 }
