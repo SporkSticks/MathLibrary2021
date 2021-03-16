@@ -71,9 +71,9 @@ namespace MathClasses
         {
             Vector3 result = new Vector3();
 
-            result.x = (lhs.m1 * rhs.x) + (lhs.m2 * rhs.y) + (lhs.m3 * rhs.z);
-            result.y = (lhs.m4 * rhs.x) + (lhs.m5 * rhs.y) + (lhs.m6 * rhs.z);
-            result.z = (lhs.m7 * rhs.x) + (lhs.m8 * rhs.y) + (lhs.m9 * rhs.z);
+            result.x = (lhs.m1 * rhs.x) + (lhs.m4 * rhs.y) + (lhs.m7 * rhs.z);
+            result.y = (lhs.m2 * rhs.x) + (lhs.m5 * rhs.y) + (lhs.m8 * rhs.z);
+            result.z = (lhs.m3 * rhs.x) + (lhs.m6 * rhs.y) + (lhs.m9 * rhs.z);
 
             return result;
         }
@@ -83,15 +83,15 @@ namespace MathClasses
         {
             Matrix3 result = new Matrix3();
 
-            result.m1 = (lhs.m1 * rhs.m1) + (lhs.m2 * rhs.m4) + (lhs.m3 * rhs.m7);
-            result.m2 = (lhs.m1 * rhs.m2) + (lhs.m2 * rhs.m5) + (lhs.m3 * rhs.m8);
-            result.m3 = (lhs.m1 * rhs.m3) + (lhs.m2 * rhs.m6) + (lhs.m3 * rhs.m9);
-            result.m4 = (lhs.m4 * rhs.m1) + (lhs.m5 * rhs.m4) + (lhs.m6 * rhs.m7);
-            result.m5 = (lhs.m4 * rhs.m2) + (lhs.m5 * rhs.m5) + (lhs.m6 * rhs.m8);
-            result.m6 = (lhs.m4 * rhs.m3) + (lhs.m5 * rhs.m6) + (lhs.m6 * rhs.m9);
-            result.m7 = (lhs.m7 * rhs.m1) + (lhs.m8 * rhs.m4) + (lhs.m9 * rhs.m7);
-            result.m8 = (lhs.m7 * rhs.m2) + (lhs.m8 * rhs.m5) + (lhs.m9 * rhs.m8);
-            result.m9 = (lhs.m7 * rhs.m3) + (lhs.m8 * rhs.m6) + (lhs.m9 * rhs.m9);
+            result.m1 = (lhs.m1 * rhs.m1) + (lhs.m4 * rhs.m2) + (lhs.m7 * rhs.m3);
+            result.m2 = (lhs.m2 * rhs.m1) + (lhs.m5 * rhs.m2) + (lhs.m8 * rhs.m3);
+            result.m3 = (lhs.m3 * rhs.m1) + (lhs.m6 * rhs.m2) + (lhs.m9 * rhs.m3);
+            result.m4 = (lhs.m1 * rhs.m4) + (lhs.m4 * rhs.m5) + (lhs.m7 * rhs.m6);
+            result.m5 = (lhs.m2 * rhs.m4) + (lhs.m5 * rhs.m5) + (lhs.m8 * rhs.m6);
+            result.m6 = (lhs.m3 * rhs.m4) + (lhs.m6 * rhs.m5) + (lhs.m9 * rhs.m6);
+            result.m7 = (lhs.m1 * rhs.m7) + (lhs.m4 * rhs.m8) + (lhs.m7 * rhs.m9);
+            result.m8 = (lhs.m2 * rhs.m7) + (lhs.m5 * rhs.m8) + (lhs.m8 * rhs.m9);
+            result.m9 = (lhs.m3 * rhs.m7) + (lhs.m6 * rhs.m8) + (lhs.m9 * rhs.m9);
 
             return result;
         }
@@ -105,7 +105,7 @@ namespace MathClasses
             m4 = 0;
             m5 = (float)Math.Cos(xRot);
             m6 = (float)Math.Sin(xRot);
-            m7 = 1;
+            m7 = 0;
             m8 = -(float)Math.Sin(xRot);
             m9 = (float)Math.Cos(xRot);
         }
