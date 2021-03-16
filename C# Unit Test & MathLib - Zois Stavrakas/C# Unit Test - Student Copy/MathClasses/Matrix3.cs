@@ -8,6 +8,7 @@ namespace MathClasses
 {
     public class Matrix3
     {
+        // Initialise the 9 entries in the matrix
         public float m1, m2, m3, m4, m5, m6, m7, m8, m9;
 
         // Default Constructor
@@ -95,7 +96,7 @@ namespace MathClasses
             return result;
         }
 
-        // setRotateX(f)
+        // setRotateX(f) - set the X-axis rotation of the matrix
         public void SetRotateX(float xRot)
         {
             m1 = 1;
@@ -109,7 +110,7 @@ namespace MathClasses
             m9 = (float)Math.Cos(xRot);
         }
 
-        // setRotateY(f)
+        // setRotateY(f) - set the Y-axis rotation of the matrix
         public void SetRotateY(float yRot)
         {
             m1 = (float)Math.Cos(yRot);
@@ -123,7 +124,7 @@ namespace MathClasses
             m9 = (float)Math.Cos(yRot);
         }
 
-        // setRotateZ(f)
+        // setRotateZ(f) - set the Z-axis rotation of the matrix
         public void SetRotateZ(float zRot)
         {
             m1 = (float)Math.Cos(zRot);

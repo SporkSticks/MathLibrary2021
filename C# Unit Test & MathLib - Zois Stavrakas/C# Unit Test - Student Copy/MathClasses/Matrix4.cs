@@ -8,6 +8,7 @@ namespace MathClasses
 {
     public class Matrix4
     {
+        // Initialise the 16 entries in the matrix
         public float m1, m2, m3, m4, m5, m6, m7, m8, m9, m10, m11, m12, m13, m14, m15, m16;
 
         // Default Constructor
@@ -119,7 +120,7 @@ namespace MathClasses
             return result;
         }
 
-        // setRotateX(f)
+        // setRotateX(f) - set the X-axis rotation of the matrix
         public void SetRotateX(float xRot)
         {
             m1 = 1;
@@ -140,7 +141,7 @@ namespace MathClasses
             m16= 1;
         }
 
-        // setRotateY(f)
+        // setRotateY(f) - set the Y-axis rotation of the matrix
         public void SetRotateY(float yRot)
         {
             m1 = (float)Math.Cos(yRot);
@@ -161,7 +162,7 @@ namespace MathClasses
             m16= 1;
         }
 
-        // setRotateZ(f)
+        // setRotateZ(f) - set the Z-axis rotation of the matrix
         public void SetRotateZ(float zRot)
         {
             m1 = (float)Math.Cos(zRot);
